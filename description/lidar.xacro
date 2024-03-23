@@ -5,9 +5,9 @@
 	<xacro:include filename="colours.xacro"/> -->
 
 	<joint name="laser_joint" type="fixed">
-		<parent link="front_caster_wheel"/>
+		<parent link="chassis"/>
 		<child link="laser_frame"/>
-		<origin xyz="0 0 ${chassis_height + 0.01}"/>
+		<origin xyz="${(chassis_length/2)-0.05} 0 ${(chassis_height/2) + 0.01}"/>
 	</joint>
 
 	<link name="laser_frame">
@@ -48,7 +48,7 @@
 
 			<pose> 0 0 0 0 0 0 </pose>
 			<visualize>true</visualize>
-			<update_rate>5.5</update_rate>
+			<update_rate>10.0</update_rate>
 			<ray>
 
 				<scan>
