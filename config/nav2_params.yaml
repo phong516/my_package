@@ -145,12 +145,12 @@ controller_server:
     FollowPath:
       plugin: "dwb_core::DWBLocalPlanner"
       debug_trajectory_details: True
-      min_vel_x: -1.0
+      min_vel_x: 0.0
       min_vel_y: 0.0
       max_vel_x: 1.0
       max_vel_y: 0.0
       max_vel_theta: 1.0
-      min_speed_xy: -1.0
+      min_speed_xy: 0.0
       max_speed_xy: 1.0
       min_speed_theta: 0.0
       # Add high threshold velocity for turtlebot 3 issue.
@@ -343,11 +343,11 @@ velocity_smoother:
     use_sim_time: True
     smoothing_frequency: 30.0
     scale_velocities: False
-    feedback: "OPEN_LOOP"
+    feedback: "CLOSED_LOOP"
     max_velocity: [1.0, 0.0, 1.0]
-    min_velocity: [-1.0, 0.0, -1.0]
-    max_accel: [2.5, 0.0, 3.2]
-    max_decel: [-2.5, 0.0, -3.2]
+    min_velocity: [0.0, 0.0, 0.0]
+    max_accel: [1.0, 0.0, 1.0]
+    max_decel: [-1.0, 0.0, -1.0]
     odom_topic: "odom"
     odom_duration: 0.1
     deadband_velocity: [0.0, 0.0, 0.0]

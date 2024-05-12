@@ -7,9 +7,24 @@ endif()
 
 # find dependencies
 find_package(ament_cmake REQUIRED)
+find_package(ament_cmake_python REQUIRED)
+find_package(rclpy REQUIRED)
+find_package(std_msgs REQUIRED)
 # uncomment the following section in order to fill in
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)
+
+ament_python_install_package(${PROJECT_NAME})
+
+install(
+	DIRECTORY launch config description worlds src
+	DESTINATION share/${PROJECT_NAME}
+	)
+
+install(
+  PROGRAMS src/test_nav2_goal.py
+  DESTINATION lib/${PROJECT_NAME}
+  )
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
@@ -22,10 +37,5 @@ if(BUILD_TESTING)
   set(ament_cmake_cpplint_FOUND TRUE)
   ament_lint_auto_find_test_dependencies()
 endif()
-
-install(
-	DIRECTORY launch config description worlds
-	DESTINATION share/${PROJECT_NAME}
-	)
 
 ament_package()
