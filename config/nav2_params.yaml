@@ -144,7 +144,7 @@ controller_server:
     FollowPath:
       plugin: "nav2_rotation_shim_controller::RotationShimController"
       primary_controller: "nav2_regulated_pure_pursuit_controller::RegulatedPurePursuitController"
-      angular_dist_threshold: 0.785
+      angular_dist_threshold: 0.78
       forward_sampling_distance: 0.5
       rotate_to_heading_angular_vel: 0.5
       max_angular_accel: 3.2
