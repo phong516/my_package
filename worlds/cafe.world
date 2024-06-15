@@ -320,28 +320,18 @@
       <static>1</static>
     </model>
     <state world_name='default'>
-      <sim_time>881 545000000</sim_time>
-      <real_time>793 835626402</real_time>
-      <wall_time>1710947510 212256189</wall_time>
-      <iterations>785225</iterations>
+      <sim_time>1064 957000000</sim_time>
+      <real_time>187 167807069</real_time>
+      <wall_time>1718189854 605409281</wall_time>
+      <iterations>183412</iterations>
       <model name='Construction Barrel'>
-        <pose>-2.04096 0.069887 1e-06 3e-06 2e-06 -1.1e-05</pose>
+        <pose>-2.04097 0.069878 -2e-06 -7e-06 -4e-06 -1.5e-05</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>-2.04096 0.069887 1e-06 3e-06 2e-06 -1.1e-05</pose>
+          <pose>-2.04097 0.069878 -2e-06 -7e-06 -4e-06 -1.5e-05</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>-0.127578 6.72898 1.66267 2.02059 -0.390902 0.035236</acceleration>
-          <wrench>-63.7888 3364.49 831.333 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='Mailbox'>
-        <pose>2.6058 -0.266536 -9e-06 -5e-06 -5e-06 0</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose>2.6058 -0.266536 -9e-06 -5e-06 -5e-06 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 -9.8 0 -0 0</acceleration>
-          <wrench>0 0 -9.8 0 -0 0</wrench>
+          <acceleration>-3.55225 0.313494 -4.53176 2.35865 -0.544478 -3.14085</acceleration>
+          <wrench>-1776.13 156.747 -2265.88 0 -0 0</wrench>
         </link>
       </model>
       <model name='bookshelf'>
@@ -355,7 +345,7 @@
         </link>
       </model>
       <model name='brick_box_3x1x3'>
-        <pose>-4.11249 1.92137 0 0.027825 -0.02774 0.783676</pose>
+        <pose>-4.11249 1.92137 -2e-06 0.027825 -0.02774 0.783676</pose>
         <scale>1 1 1</scale>
         <link name='chassis'>
           <pose>-4.11249 1.86245 1.49884 0.027825 -0.02774 0.783676</pose>
@@ -409,13 +399,13 @@
         </link>
       </model>
       <model name='first_2015_trash_can'>
-        <pose>2.57304 -3.18991 -1e-06 1e-06 1.7e-05 -0.000818</pose>
+        <pose>2.5731 -3.18993 -5e-06 0 -2e-06 -0.001151</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>2.57304 -3.18991 -1e-06 1e-06 1.7e-05 -0.000818</pose>
+          <pose>2.5731 -3.18993 -5e-06 0 -2e-06 -0.001151</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>-6.8926 0.954807 6.98148 -2.99748 0.193326 -0.378517</acceleration>
-          <wrench>-33.2965 4.61244 33.7258 0 -0 0</wrench>
+          <acceleration>-3.25481 -0.472366 -1.86236 -1.85184 -0.557422 -3.13902</acceleration>
+          <wrench>-15.7232 -2.28189 -8.99661 0 -0 0</wrench>
         </link>
       </model>
       <model name='fountain'>
@@ -438,23 +428,13 @@
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='person_walking'>
-        <pose>-0.365293 2.16947 -1e-06 2e-06 1e-06 -1.7e-05</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose>-0.365293 2.16947 -1e-06 2e-06 1e-06 -1.7e-05</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0.962829 -2.02886 -2.69787 2.11618 1.05512 -0.105483</acceleration>
-          <wrench>77.0263 -162.308 -215.829 0 -0 0</wrench>
-        </link>
-      </model>
       <light name='sun'>
         <pose>0 0 10 0 -0 0</pose>
       </light>
     </state>
     <gui fullscreen='0'>
       <camera name='user_camera'>
-        <pose>-3.31313 -17.9899 19.8478 0 0.657799 1.27784</pose>
+        <pose>-3.89941 -15.9708 13.2125 0 0.657799 1.27784</pose>
         <view_controller>orbit</view_controller>
         <projection_type>perspective</projection_type>
       </camera>
@@ -843,130 +823,6 @@
         <kinematic>0</kinematic>
       </link>
       <pose>2.57291 -3.18987 0 0 -0 0</pose>
-    </model>
-    <model name='Mailbox'>
-      <link name='link'>
-        <collision name='collision'>
-          <geometry>
-            <mesh>
-              <uri>model://mailbox/meshes/mailbox.dae</uri>
-            </mesh>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <geometry>
-            <mesh>
-              <uri>model://mailbox/meshes/mailbox.dae</uri>
-            </mesh>
-          </geometry>
-          <material>
-            <script>
-              <uri>model://mailbox/materials/scripts</uri>
-              <uri>model://mailbox/materials/textures</uri>
-              <name>Mailbox/Diffuse</name>
-            </script>
-          </material>
-        </visual>
-        <self_collide>0</self_collide>
-        <inertial>
-          <pose>0 0 0 0 -0 0</pose>
-          <inertia>
-            <ixx>1</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>1</iyy>
-            <iyz>0</iyz>
-            <izz>1</izz>
-          </inertia>
-          <mass>1</mass>
-        </inertial>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose>2.6058 -0.266536 0 0 -0 0</pose>
-    </model>
-    <model name='person_walking'>
-      <link name='link'>
-        <inertial>
-          <pose>0 0 0.95 0 -0 0</pose>
-          <mass>80</mass>
-          <inertia>
-            <ixx>27.82</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>24.88</iyy>
-            <iyz>0</iyz>
-            <izz>4.57</izz>
-          </inertia>
-        </inertial>
-        <collision name='bottom'>
-          <pose>0 0 0.01 0 -0 0</pose>
-          <geometry>
-            <box>
-              <size>0.35 0.75 0.02</size>
-            </box>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <collision name='person'>
-          <pose>0 0 -0.02 0 -0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>model://person_walking/meshes/walking.dae</uri>
-            </mesh>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <pose>0 0 -0.02 0 -0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>model://person_walking/meshes/walking.dae</uri>
-            </mesh>
-          </geometry>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose>-0.365259 2.16947 0 0 -0 0</pose>
     </model>
     <model name='fire_hydrant'>
       <static>1</static>
