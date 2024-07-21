@@ -7,7 +7,7 @@
     <xacro:property name="chassis_width" value="0.315"/>
     <xacro:property name="chassis_height" value="0.2"/>
     <xacro:property name="chassis_mass" value="1.0"/>
-	<xacro:property name="chassis_origin_x" value="${(chassis_length/2) + 0.005}"/>
+	<xacro:property name="chassis_origin_x" value="${(chassis_length/2)}"/>
 	<xacro:property name="chassis_origin_y" value="0.0"/>
 	<xacro:property name="chassis_origin_z" value="${(chassis_height/2 + wheel_radius)}"/>
 
@@ -26,7 +26,7 @@
 	<xacro:property name="caster_wheel_origin_y" value="0.0"/>
 	<xacro:property name="caster_wheel_origin_z" value="${wheel_origin_z}"/>
 
-	<xacro:property name="mu" value="0.001"/>
+	<xacro:property name="mu" value="0.1"/>
 
 
 <!-- BASE LINK-->
