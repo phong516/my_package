@@ -28,6 +28,20 @@ from tf_transformations import quaternion_from_euler
 Navigates a robot from an initial pose to a goal pose.
 '''
 
+def createPose(x:float, y:float, yaw:float=None)->PoseStamped:
+    pose = PoseStamped()
+    pose.header.frame_id = "map"
+    pose.pose.position.x = x
+    pose.pose.position.y = y
+    pose.pose.position.z = 0.0
+    if (yaw is not None):
+      q = quaternion_from_euler(0, 0, yaw)
+      pose.pose.orientation.x = q[0]
+      pose.pose.orientation.y = q[1]
+      pose.pose.orientation.z = q[2]
+      pose.pose.orientation.w = q[3]
+    return pose
+
 def main():
  
   # Start the ROS 2 Python Client Library
@@ -37,29 +51,24 @@ def main():
   navigator = BasicNavigator()
  
   # Wait for navigation to fully activate. Use this line if autostart is set to true.
-  # navigator.waitUntilNav2Active()
+  navigator.waitUntilNav2Active()
 
-  cmd = input("Enter the goal pose (x#y#yaw#: ")
-  goal_pose = PoseStamped()
-  goal_pose.header.frame_id = "map"
-  goal_pose.header.stamp = navigator.get_clock().now().to_msg()
-  goal_pose.pose.position.x = float(cmd.split("x")[1].split("y")[0])
-  goal_pose.pose.position.y = float(cmd.split("y")[1].split("yaw")[0])
-  goal_pose.pose.position.z = 0.0
+  pose1 = createPose(1.0, -2.0)
+  pose2 = createPose(2.0, -2.0)
+  pose3 = createPose(3.0, -1.5)
+  pose4 = createPose(3.0, -1.0)
+  pose5 = createPose(2.0, -0.5)
+  pose6 = createPose(1.0, -0.5)
+  pose7 = createPose(1.0, -1.0)
+  poses = [pose1, pose2, pose3, pose4, pose5, pose6, pose7]
 
-  yaw_goal = float(cmd.split("yaw")[1])
-  q = quaternion_from_euler(0, 0, yaw_goal)
-
-  goal_pose.pose.orientation.x = q[0]
-  goal_pose.pose.orientation.y = q[1]
-  goal_pose.pose.orientation.z = q[2]
-  goal_pose.pose.orientation.w = q[3]
-
-  navigator.goToPose(goal_pose)
-
+  navigator.goThroughPoses(poses)
+  while not navigator.isTaskComplete():
+    time.sleep(0.5)
  
 if __name__ == '__main__':
     #get the x, y, yaw from user input
     # # is the value
     main()
+
     
